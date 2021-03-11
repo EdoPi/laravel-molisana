@@ -126,26 +126,7 @@ $array = json_decode($data, true);
 
 @endphp
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Laravel - Molisana</title>
-</head>
-<body>
-      @foreach ($array as $key => $item)
-      <br> 
-      <hr>
-      <br>
-      <h1><a href="/product/{{$key}}">{{$key}}</a></h1>
-       @foreach ($item as $title => $pasta)
-           <b>{{$title}}: </b>{{$pasta}} <br>
-       @endforeach 
-
-      @endforeach
-    
-</body>
-</html>
+@foreach ($array[$keyPasta] as $title => $thisPasta)
+    <h3>{{$title}}:</h3> 
+    {{$thisPasta}} <br>
+@endforeach
