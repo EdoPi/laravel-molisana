@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <title>Laravel - Molisana</title>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="{{asset('img/logo.png')}}" alt="">
+    </div>
+    <div class="navbar">
+      <ul>
+        <li>Home</li>
+        <li>Prodotti</li>
+        <li>News</li>
+      </ul>
+    </div>
+  </header>
+    @yield('main-content')   
+  <footer>
+    <div class="footer-column">
+      <div class="footer-logo">
+
+      </div>
+      <div class="footer-address">
+
+      </div>
+    </div>
+    <div class="footer-column">
+      <div class="footer-pastificio">
+
+      </div>
+      <div class="footer-prodotti">
+
+      </div>
+
+    </div>
+    <div class="footer-column">
+      <div class="footer-chef">
+
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

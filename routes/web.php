@@ -14,9 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homePage');
+    $pasta = config('pasta');
+    return view('pages.homePage',['array' => $pasta]);
 });
 
-Route::get('/product/{id}', function ($id) {
-    return view('product', ['keyPasta' => $id]);
+
+
+Route::get('/product/{id?}', function ($id = null) {
+    if(empty($id)){
+        return redirect('/');
+    };
+    
+    $pasta = config('pasta');
+
+    if ($id > count($pasta)) {
+        return abort(404);
+    };
+
+    return view('pages.product', ['keyPasta' => $id], ['array' => $pasta] );
 });
