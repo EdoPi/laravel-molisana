@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* HEADER */
 header {
   width: 100%;
@@ -28,23 +36,113 @@ header .navbar > ul {
   width: 10%;
   justify-content: space-between;
 }
+header .navbar > ul a {
+  color: black;
+}
 header .navbar > ul > li {
   padding: 20px 10px;
   font-size: 20px;
 }
+header .navbar > ul > li:nth-child(2) {
+  background-color: #B4E5FB;
+}
 
 /* SEZIONE HOME MAIN */
+.main-content {
+  padding: 50px 0 40px 0;
+}
 .main-content .container {
   margin: 0 auto;
   width: 1200px;
 }
-.main-content .container .lunghe-container {
+.main-content .container h2 {
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #000063;
+}
+.main-content .container .pasta-container {
   display: flex;
   flex-wrap: wrap;
 }
-.main-content .container .lunghe-container .pasta-content {
-  height: 200px;
-  width: 300px;
-  background-size: cover;
+.main-content .container .pasta-container .pasta-content {
+  width: calc(100%/3);
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.main-content .container .pasta-container .pasta-content .pasta-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* PRODUCT MAIN */
+.product-main {
+  width: 100%;
+  background-color: #B8DAE4;
+  position: relative;
+}
+.product-main .arrow {
+  position: absolute;
+  font-size: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 10px 5px;
+}
+.product-main .arrow > a > i {
+  color: white;
+}
+.product-main .left-arrow {
+  left: 0px;
+  top: 45%;
+}
+.product-main .right-arrow {
+  right: 0px;
+  top: 45%;
+}
+.product-main > .product-container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.product-main > .product-container img {
+  width: 80%;
+}
+.product-main > .product-container .product-description {
+  color: #34517A;
+  padding: 0 100px 50px 100px;
+  text-align: left;
+}
+
+/* FOOTER */
+footer {
   background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+footer h3 {
+  font-weight: 400;
+}
+footer .footer-container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 100px 0;
+  color: #999;
+  font-size: 13px;
+}
+footer .footer-container ul {
+  list-style-type: none;
+  padding: 20px 0 20px 0;
+}
+footer .footer-container ul li {
+  line-height: 30px;
+}
+footer .footer-container a {
+  text-decoration: none;
+  color: #999;
+}
+footer .footer-container .footer-address > ul > li {
+  line-height: 20px;
+}
+footer .footer-container .footer-chef {
+  padding-right: 70px;
 }
