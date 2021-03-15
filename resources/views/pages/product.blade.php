@@ -1,15 +1,24 @@
 @php
     $indexPasta = $keyPasta -1;
+    
 @endphp
 @extends('layout')
 
 @section('main-content')
 <div class="product-main">
     <div class="left-arrow arrow">
-        <a href=""><i class="fas fa-chevron-left"></i></a>
+        @if ($keyPasta === '1')
+        <a href="/product/{{count($array)}}"><i class="fas fa-chevron-left"></i></a>
+        @else
+        <a href="/product/{{$keyPasta - 1}}"><i class="fas fa-chevron-left"></i></a>
+        @endif        
     </div>
-    <div class="right-arrow arrow">
-        <a href=""><i class="fas fa-chevron-right"></i></a>
+    <div class="right-arrow arrow">        
+        @if ($keyPasta == count($array))
+        <a href="/product/1"><i class="fas fa-chevron-right"></i></a> 
+        @else
+        <a href="/product/{{$keyPasta + 1}}"><i class="fas fa-chevron-right"></i></a>
+        @endif        
     </div>
     <div class="product-container">
         <img src="{{$array[$indexPasta]['src-h']}}" alt="">
@@ -21,9 +30,4 @@
 
 </div>
 
-
-{{--     @foreach ($array[$keyPasta -1 ] as $title => $thisPasta)
-    <h3>{{$title}}:</h3> 
-    {{$thisPasta}} <br>
-    @endforeach  
- --}}@endsection
+@endsection
